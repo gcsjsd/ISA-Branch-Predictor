@@ -50,7 +50,6 @@ struct  StaticPos{
     uint8_t find; //1: find, 0: didn't find
 };
 
-
 struct staticMap map[MAXBRANCHNUM];
 
 
@@ -67,7 +66,7 @@ init_predictor()
   //TODO: Initialize Branch Predictor Data Structures
   //
 
-  for(int i = 0; i < sizeof(map)/sizeof(struct staicMap); i++){
+  for(int i = 0; i < sizeof(map)/sizeof(struct staticMap); i++){
     map[i].pcAdd = -1;
     map[i].status = 1; //00->0 SNT, 01->1: WNT, 10->2: WT, 11->3: ST
   }
@@ -84,7 +83,7 @@ struct StaticPos findStaticBranch(uint32_t pc){
       ans.find = 1;
       ans.pos = i;
       return ans;
-    }else if(map[i] == -1){
+    }else if(map[i].pcAdd == -1){
       ans.find = 0;
       ans.pos = i;
       return ans;
@@ -136,12 +135,15 @@ train_predictor(uint32_t pc, uint8_t outcome)
   struct StaticPos ans = findStaticBranch(pc);
 
   if(ans.find == 0){
-    map[ans.pos]
+    map[ans.pos].pcAdd = pc;
+    //map[ans.pos].status = 1;
   }
-  else if(map[ans.pos].status <= 2) return NOTTAKEN;
-  else return TAKEN;
-
-  if(outcome == 0){
-
+  else{
+    if(outcome == NOTTAKEN){
+      if(map[ans.pos].status != 0) map[ans.pos].status--;
+    }else{
+      if(map[ans.pos].status != 3) map[ans.pos].status++;
+    }
   }
+  return;
 }
