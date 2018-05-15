@@ -1,3 +1,3 @@
-/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles/CSE240A.dir
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles/CSE240A.dir

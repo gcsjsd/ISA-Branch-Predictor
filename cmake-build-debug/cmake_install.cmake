@@ -1,4 +1,4 @@
-# Install script for directory: /Users/gechang/Documents/spring2018/cse 240A/CSE240A
+# Install script for directory: /Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

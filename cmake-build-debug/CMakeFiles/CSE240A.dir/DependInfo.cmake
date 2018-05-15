@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/main.c" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles/CSE240A.dir/src/main.c.o"
-  "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/predictor.c" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles/CSE240A.dir/src/predictor.c.o"
+  "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles/CSE240A.dir/src/main.c.o"
+  "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.c" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles/CSE240A.dir/src/predictor.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

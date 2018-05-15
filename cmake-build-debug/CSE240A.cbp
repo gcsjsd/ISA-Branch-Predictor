@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug"/>
+				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug"/>
+				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug"/>
+				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CSE240A">
-				<Option output="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CSE240A" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug"/>
+				<Option output="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CSE240A" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 CSE240A"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 CSE240A"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CSE240A/fast">
-				<Option output="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CSE240A" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug"/>
+				<Option output="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CSE240A" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,47 +75,47 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 CSE240A/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 CSE240A/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/gechang/Documents/spring2018/cse\ 240A/CSE240A/Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/README.md">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/README.md">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/README.txt">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/README.txt">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/main.c">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/predictor.c">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.c">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/predictor.h">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.h">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/traces/fp_1.bz2">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/traces/fp_1.bz2">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/traces/fp_2.bz2">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/traces/fp_2.bz2">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/traces/int_1.bz2">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/traces/int_1.bz2">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/traces/int_2.bz2">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/traces/int_2.bz2">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/traces/mm_1.bz2">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/traces/mm_1.bz2">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/traces/mm_2.bz2">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/traces/mm_2.bz2">
 			<Option target="CSE240A"/>
 		</Unit>
-		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/CMakeLists.txt">
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

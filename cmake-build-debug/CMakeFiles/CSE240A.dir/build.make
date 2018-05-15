@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/gechang/Documents/spring2018/cse 240A/CSE240A"
+CMAKE_SOURCE_DIR = "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CSE240A.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/CSE240A.dir/flags.make
 
 CMakeFiles/CSE240A.dir/src/main.c.o: CMakeFiles/CSE240A.dir/flags.make
 CMakeFiles/CSE240A.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CSE240A.dir/src/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CSE240A.dir/src/main.c.o   -c "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CSE240A.dir/src/main.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CSE240A.dir/src/main.c.o   -c "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c"
 
 CMakeFiles/CSE240A.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CSE240A.dir/src/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/main.c" > CMakeFiles/CSE240A.dir/src/main.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c" > CMakeFiles/CSE240A.dir/src/main.c.i
 
 CMakeFiles/CSE240A.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CSE240A.dir/src/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/main.c" -o CMakeFiles/CSE240A.dir/src/main.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c" -o CMakeFiles/CSE240A.dir/src/main.c.s
 
 CMakeFiles/CSE240A.dir/src/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/CSE240A.dir/src/main.c.o.provides.build: CMakeFiles/CSE240A.dir/src/m
 
 CMakeFiles/CSE240A.dir/src/predictor.c.o: CMakeFiles/CSE240A.dir/flags.make
 CMakeFiles/CSE240A.dir/src/predictor.c.o: ../src/predictor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/CSE240A.dir/src/predictor.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CSE240A.dir/src/predictor.c.o   -c "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/predictor.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/CSE240A.dir/src/predictor.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/CSE240A.dir/src/predictor.c.o   -c "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.c"
 
 CMakeFiles/CSE240A.dir/src/predictor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CSE240A.dir/src/predictor.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/predictor.c" > CMakeFiles/CSE240A.dir/src/predictor.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.c" > CMakeFiles/CSE240A.dir/src/predictor.c.i
 
 CMakeFiles/CSE240A.dir/src/predictor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CSE240A.dir/src/predictor.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/src/predictor.c" -o CMakeFiles/CSE240A.dir/src/predictor.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.c" -o CMakeFiles/CSE240A.dir/src/predictor.c.s
 
 CMakeFiles/CSE240A.dir/src/predictor.c.o.requires:
 
@@ -117,7 +117,7 @@ CSE240A: CMakeFiles/CSE240A.dir/src/main.c.o
 CSE240A: CMakeFiles/CSE240A.dir/src/predictor.c.o
 CSE240A: CMakeFiles/CSE240A.dir/build.make
 CSE240A: CMakeFiles/CSE240A.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable CSE240A"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable CSE240A"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CSE240A.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/CSE240A.dir/clean:
 .PHONY : CMakeFiles/CSE240A.dir/clean
 
 CMakeFiles/CSE240A.dir/depend:
-	cd "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/cmake-build-debug/CMakeFiles/CSE240A.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug" "/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/cmake-build-debug/CMakeFiles/CSE240A.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/CSE240A.dir/depend
 
