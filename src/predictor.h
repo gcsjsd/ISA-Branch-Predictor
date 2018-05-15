@@ -44,9 +44,9 @@ extern const char *bpName[];
 //------------------------------------//
 //      Predictor Configuration       //
 //------------------------------------//
-extern int ghistoryBits; // Number of bits used for Global History
-extern int lhistoryBits; // Number of bits used for Local History
-extern int pcIndexBits;  // Number of bits used for PC index
+extern const int ghistoryBits; // Number of bits used for Global History
+extern const int lhistoryBits; // Number of bits used for Local History
+extern const int pcIndexBits;  // Number of bits used for PC index
 extern int bpType;       // Branch Prediction Type
 extern int verbose;
 

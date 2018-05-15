@@ -24,9 +24,6 @@ const char *bpName[4] = { "Static", "Gshare",
                           "Tournament", "Custom" };
 
 
-int ghistoryBits; // Number of bits used for Global History
-int lhistoryBits; // Number of bits used for Local History
-int pcIndexBits;  // Number of bits used for PC index
 int bpType;       // Branch Prediction Type
 int verbose;
 
@@ -44,6 +41,30 @@ int verbose;
 
 
 //------The Tournament Predictor------
+const int ghistoryBits; // Number of bits used for Global History
+const int lhistoryBits; // Number of bits used for Local History
+const int pcIndexBits;  // Number of bits used for PC index
+
+//construct the localPredictor
+struct localNode {
+    uint32_t pattern;
+    uint8_t status;
+};
+
+struct localPcNode {
+    uint32_t pcAdd;
+    struct localNode localPcMap[lhistoryBits];
+};
+
+struct localNode lMap[pcIndexBits];
+
+//construct the globalPredictor
+struct globalNode {
+    uint32_t pattern = 0;
+    uint8_t status = 1;
+};
+
+struct globalNode gMap[ghistoryBits];
 
 //------Custom------
 //We choose a dynamic branch predictor here
