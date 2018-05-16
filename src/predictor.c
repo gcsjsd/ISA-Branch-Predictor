@@ -41,9 +41,9 @@ int verbose;
 
 
 //------The Tournament Predictor------
-const int ghistoryBits; // Number of bits used for Global History
-const int lhistoryBits; // Number of bits used for Local History
-const int pcIndexBits;  // Number of bits used for PC index
+int ghistoryBits; // Number of bits used for Global History
+int lhistoryBits; // Number of bits used for Local History
+int pcIndexBits;  // Number of bits used for PC index
 
 //construct the localPredictor
 struct localNode {
@@ -54,7 +54,7 @@ struct localNode {
 struct localPcNode {
     uint32_t pcAdd;
     uint32_t currLocalPattern;
-    struct localNode localPcMap[lhistoryBits];
+    struct localNode localPcMap[4096];
 };
 
 struct localPos {
@@ -62,7 +62,7 @@ struct localPos {
     uint8_t find;
 };
 
-struct localPcNode lMap[pcIndexBits];
+struct localPcNode lMap[4096];
 
 //construct the globalPredictor
 struct globalNode {
@@ -76,7 +76,7 @@ struct  globalPos {
     uint8_t find;
 };
 
-struct globalNode gMap[ghistoryBits];
+struct globalNode gMap[4096];
 uint32_t currGlobalPattern;
 
 //choice maker
@@ -102,6 +102,14 @@ struct dynamicMap dMap[MAXBRANCHNUM];
 //        Predictor Functions         //
 //------------------------------------//
 
+int calPow(int num){
+    int ans = 1;
+    for(int i = 0; i < num; i++){
+        ans = ans*2;
+    }
+    return ans;
+}
+
 //------Static Functions------//
 //no initialization in Static
 
@@ -115,7 +123,7 @@ struct localPos findLocalBranch(uint32_t pc){
     struct localPos ans;
     ans.find = 0;
     ans.pos = 0;
-    for(int i = 0; i < sizeof(lMap)/sizeof(struct localPcNode); i++){
+    for(int i = 0; i < calPow(pcIndexBits); i++){
         if(lMap[i].pcAdd == pc){
             ans.find = 1;
             ans.pos = i;
@@ -147,7 +155,7 @@ struct globalPos findGlobalBranch(uint32_t pc){
     struct globalPos ans;
     ans.find = 0;
     ans.pos = 0;
-    for(int i = 0; i < sizeof(gMap)/sizeof(struct globalNode); i++){
+    for(int i = 0; i < calPow(ghistoryBits); i++){
         if(i == currGlobalPattern){
             ans.find = 1;
             ans.pos = i;
@@ -200,22 +208,21 @@ init_predictor()
   //
   //TODO: Initialize Branch Predictor Data Structures
   //
-
   //no initialization for static predictor
 
   //------initialization for the tournament predictor------
   //local predictor
-  for(int i = 0; i < sizeof(struct localNode)/sizeof(struct localPcNode); i++){
+  for(int i = 0; i < calPow(pcIndexBits); i++){
       lMap[i].pcAdd = -1;
       lMap[i].currLocalPattern = 0;
-      for (int j = 0; j < sizeof(lMap[i].localPcMap)/sizeof(struct localNode); j++) {
+      for (int j = 0; j < calPow(lhistoryBits); j++) {
           lMap[i].localPcMap[j].status = 1; //00->0 SNT, 01->1: WNT, 10->2: WT, 11->3: ST
           //lMap[i].localPcMap[j].pattern = j; //different pattern 00000... -> 11111...
       }
   }
   //global predictor
   currGlobalPattern = 0;
-  for(int i = 0; i < sizeof(gMap)/sizeof(struct globalNode); i++){
+  for(int i = 0; i < calPow(ghistoryBits); i++){
       //gMap[i].pattern = i;
       gMap[i].status = 1;//00->0 SNT, 01->1: WNT, 10->2: WT, 11->3: ST
   }
@@ -278,7 +285,7 @@ train_predictor(uint32_t pc, uint8_t outcome)
       if(lMap[position.pos].localPcMap[lMap[position.pos].currLocalPattern].status < 3){
           lMap[position.pos].localPcMap[lMap[position.pos].currLocalPattern].status++;
       }
-      uint32_t tmp = lMap[position.pos].currLocalPattern<<1 + 1;
+      uint32_t tmp = (lMap[position.pos].currLocalPattern<<1) + 1;
       lMap[position.pos].currLocalPattern = tmp;
   }else{
       if(lMap[position.pos].localPcMap[lMap[position.pos].currLocalPattern].status > 0){
@@ -292,7 +299,7 @@ train_predictor(uint32_t pc, uint8_t outcome)
       if(gMap[findGlobalBranch(pc).pos].status < 3){
           gMap[findGlobalBranch(pc).pos].status++;
       }else{}
-      currGlobalPattern = currGlobalPattern << 1 + 1;
+      currGlobalPattern = (currGlobalPattern << 1) + 1;
   }else{
       if(gMap[findGlobalBranch(pc).pos].status < 0){
           gMap[findGlobalBranch(pc).pos].status--;

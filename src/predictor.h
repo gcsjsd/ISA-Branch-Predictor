@@ -32,6 +32,9 @@ extern const char *email;
 #define CUSTOM      3
 
 #define MAXBRANCHNUM 10000
+#define g 15
+#define l 15
+#define index 20
 
 extern const char *bpName[];
 
@@ -44,9 +47,10 @@ extern const char *bpName[];
 //------------------------------------//
 //      Predictor Configuration       //
 //------------------------------------//
-extern const int ghistoryBits; // Number of bits used for Global History
-extern const int lhistoryBits; // Number of bits used for Local History
-extern const int pcIndexBits;  // Number of bits used for PC index
+extern int ghistoryBits; // Number of bits used for Global History
+extern int lhistoryBits; // Number of bits used for Local History
+extern int pcIndexBits;  // Number of bits used for PC index
+
 extern int bpType;       // Branch Prediction Type
 extern int verbose;
 
