@@ -23,9 +23,13 @@ const char *email       = "EMAIL";
 const char *bpName[4] = { "Static", "Gshare",
                           "Tournament", "Custom" };
 
+int lhistoryBits;
+int ghistoryBits;
+int pcIndexBits;
 
 int bpType;       // Branch Prediction Type
 int verbose;
+
 
 //------------------------------------//
 //      Predictor Data Structures     //
@@ -41,9 +45,6 @@ int verbose;
 
 
 //------The Tournament Predictor------
-int ghistoryBits; // Number of bits used for Global History
-int lhistoryBits; // Number of bits used for Local History
-int pcIndexBits;  // Number of bits used for PC index
 
 //construct the localPredictor
 struct localNode {
@@ -58,7 +59,7 @@ struct localPcNode {
 };
 
 struct localPos {
-    uint8_t pos;
+    uint32_t pos;
     uint8_t find;
 };
 
@@ -72,7 +73,7 @@ struct globalNode {
 
 
 struct  globalPos {
-    uint8_t pos;
+    uint32_t pos;
     uint8_t find;
 };
 
@@ -92,7 +93,7 @@ struct dynamicMap {
 };
 
 struct  dynamicPos{
-    uint8_t pos;
+    uint32_t pos;
     uint8_t find; //1: find, 0: didn't find
 };
 
@@ -124,11 +125,13 @@ struct localPos findLocalBranch(uint32_t pc){
     ans.find = 0;
     ans.pos = 0;
     for(int i = 0; i < calPow(pcIndexBits); i++){
+        printf("%d \n", lhistoryBits);
         if(lMap[i].pcAdd == pc){
             ans.find = 1;
             ans.pos = i;
             return ans;
         }else if(lMap[i].pcAdd == -1){
+            lMap[i].pcAdd = pc;
             ans.find = 0;
             ans.pos = i;
             return ans;
@@ -138,13 +141,24 @@ struct localPos findLocalBranch(uint32_t pc){
 }
 
 uint8_t localRes(uint32_t pc){
+    printf("cal local \n");
     struct localPos position = findLocalBranch(pc);
     if(position.find == 0){
-        lMap[position.pos].pcAdd = pc;
+        printf("giving 0 \n");
+        //lMap[position.pos].pcAdd = pc;
+        printf("giving local \n");
         return NOTTAKEN;
     }else{
-        if(lMap[position.pos].localPcMap[lMap[position.pos].currLocalPattern].status <= 1) return NOTTAKEN;
-        else return TAKEN;
+        //printf("%d \n", position.pos);
+        //printf("%d \n", lMap[position.pos].currLocalPattern);
+        if(lMap[position.pos].localPcMap[lMap[position.pos].currLocalPattern].status <= 1){
+            printf("giving local \n");
+            return NOTTAKEN;
+        }
+        else{
+            printf("giving local \n");
+            return TAKEN;
+        }
     }
     return NOTTAKEN;
 }
@@ -166,6 +180,7 @@ struct globalPos findGlobalBranch(uint32_t pc){
 }
 
 uint8_t globalRes(uint32_t pc){
+    printf("cal global \n");
     if(gMap[findGlobalBranch(pc).pos].status <= 1) return NOTTAKEN;
     else return TAKEN;
 }
@@ -212,6 +227,7 @@ init_predictor()
 
   //------initialization for the tournament predictor------
   //local predictor
+    printf("Initialization begins \n");
   for(int i = 0; i < calPow(pcIndexBits); i++){
       lMap[i].pcAdd = -1;
       lMap[i].currLocalPattern = 0;
@@ -231,7 +247,7 @@ init_predictor()
     dMap[i].pcAdd = -1;
     dMap[i].status = 1; //00->0 SNT, 01->1: WNT, 10->2: WT, 11->3: ST
   }
-
+    printf("Initialization finished \n");
 }
 
 // Make a prediction for conditional branch instruction at PC 'pc'
@@ -253,7 +269,9 @@ make_prediction(uint32_t pc)
     case STATIC:
         return TAKEN;
     case GSHARE:
+
     case TOURNAMENT:
+        printf("T-prediction begins \n");
         return choiceMaker(localRes(pc), globalRes(pc));
     case CUSTOM:
         if(ans.find == 0) return NOTTAKEN;
@@ -277,9 +295,12 @@ train_predictor(uint32_t pc, uint8_t outcome)
   //
   //TODO: Implement Predictor training
   //
-
+    printf("Train begins\n");
   //------Tournament------
+  uint8_t res1 = localRes(pc);
+  uint8_t res2 = globalRes(pc);
   //update local
+    printf("Train local\n");
   struct localPos position = findLocalBranch(pc);
   if(outcome == TAKEN){
       if(lMap[position.pos].localPcMap[lMap[position.pos].currLocalPattern].status < 3){
@@ -294,6 +315,7 @@ train_predictor(uint32_t pc, uint8_t outcome)
       uint32_t tmp = lMap[position.pos].currLocalPattern<<1;
       lMap[position.pos].currLocalPattern = tmp;
   }
+    printf("Train global\n");
   //update global
   if(outcome == TAKEN){
       if(gMap[findGlobalBranch(pc).pos].status < 3){
@@ -307,8 +329,9 @@ train_predictor(uint32_t pc, uint8_t outcome)
       currGlobalPattern = currGlobalPattern << 1;
   }
   //update predictor
-  if(localRes(pc) != globalRes(pc)){
-      if(localRes(pc) == outcome){
+    printf("Train predictor\n");
+  if(res1 != res2){
+      if(res1 == outcome){
           if(predictorPre > 0) predictorPre--;
       }else{
           if(predictorPre < 3) predictorPre++;
@@ -316,6 +339,7 @@ train_predictor(uint32_t pc, uint8_t outcome)
   }
 
   //------Custom------//
+    printf("Train custom\n");
   struct dynamicPos ans = findDynamicBranch(pc);
 
   if(ans.find == 0){
@@ -329,5 +353,6 @@ train_predictor(uint32_t pc, uint8_t outcome)
       if(dMap[ans.pos].status != 3) dMap[ans.pos].status++;
     }
   }
+    printf("Train finished \n");
   return;
 }

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+predictor.h
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.h
+
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.c
+stdio.h
+-
+predictor.h
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.h
+
+/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/predictor.h
+stdint.h
+-
+stdlib.h
+-
+
