@@ -32,9 +32,6 @@ extern const char *email;
 #define CUSTOM      3
 
 #define MAXBRANCHNUM 10000
-#define g 15
-#define l 15
-#define index 20
 
 extern const char *bpName[];
 
