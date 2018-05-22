@@ -12,9 +12,9 @@
 //
 // TODO:Student Information
 //
-const char *studentName = "Ge Chang";
-const char *studentID   = "A53240181";
-const char *email       = "chg073@eng.ucsd.edu";
+const char *studentName = "Ge Chang, Wenyu Zhang";
+const char *studentID   = "A53240181, A53238371";
+const char *email       = "chg073@eng.ucsd.edu, wez078@ucsd.edu";
 
 //------------------------------------//
 //      Predictor Configuration       //
@@ -40,19 +40,20 @@ int verbose;
 //TODO: Add your own Branch Predictor data structures here
 //
 
-//------The Static Prdictor------
+//------The Static Predictor------
 //We assume the instruction is always taken
 //initialization: no need
 
+//------The GShare Predictor------
 
 //------The Tournament Predictor------
 
-//construct the localPredictor
+//construct the localPredictor(Tournament)
 uint32_t *localPHT;
 uint8_t *localBHT;
 uint8_t localRes;
 
-//construct the globalPredictor
+//construct the globalPredictor(GShare and Tournament)
 uint8_t *globalBHT;
 uint32_t currStatus; //current status of the branch
 uint8_t globalRes;
@@ -99,7 +100,43 @@ void modifyPrediction(uint8_t *counter, uint8_t result){
 //no initialization in Static
 
 //------Gshare Functions------//
-//by Wenyu Zhang
+//global predictor
+
+uint8_t GSharePrediction(uint32_t pc){
+    uint32_t index1 = pc & (( 1 << ghistoryBits) - 1);
+    uint32_t index2 = currStatus & ((1 << ghistoryBits) - 1);
+    uint32_t index = (index1 ^ index2) & ((1 << ghistoryBits) - 1);
+    uint8_t globalP = globalBHT[index];
+
+    if(globalP == WN || globalP ==SN){
+        globalRes = NOTTAKEN;
+    }else globalRes = TAKEN;
+
+    return globalRes;
+}
+
+void GShareInit() {
+    //------initialization for the GShare predictor------
+    //global predictor
+    //init BH
+    currStatus = 0;
+    //init BHT
+    globalBHT = malloc((1 << ghistoryBits) * sizeof(uint8_t));
+    memset(globalBHT, WN, (1 << ghistoryBits) * sizeof(uint8_t));
+}
+
+void GShareUpdate(uint32_t pc, uint8_t result){
+    //update BHT
+    uint32_t index1 = pc & (( 1 << ghistoryBits) - 1);
+    uint32_t index2 = currStatus & ((1 << ghistoryBits) - 1);
+    uint32_t index = (index1 ^ index2) & ((1 << ghistoryBits) - 1);
+    modifyPrediction(&globalBHT[index], result);
+    //update BH
+    currStatus <<= 1;
+    currStatus &= ((1 << ghistoryBits) - 1);
+    currStatus |= result;
+    return;
+}
 
 //------Tournament------//
 //local predictor
@@ -218,6 +255,7 @@ init_predictor()
             tournamentInit();
             break;
         case GSHARE:
+            GShareInit();
             break;
         case CUSTOM:
         default:
@@ -245,7 +283,7 @@ make_prediction(uint32_t pc)
     case STATIC:
         return TAKEN;
     case GSHARE:
-        return TAKEN;
+        return GSharePrediction(pc);
     case TOURNAMENT:
         return choiceMaker(pc);
     case CUSTOM:
@@ -278,6 +316,7 @@ train_predictor(uint32_t pc, uint8_t result)
             tournamentUpdate(pc, result);
             break;
         case GSHARE:
+            GShareUpdate(pc, result);
             break;
         case CUSTOM:
             //neural_train(pc, outcome);
