@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "predictor.h"
+#include "TAGE.h"
 
 //
 // TODO:Student Information
@@ -62,20 +63,9 @@ uint8_t globalRes;
 uint8_t *predictorPre; //00->0 SL, 01->1: WL, 10->2: WG, 11->3: SG
 
 //------Custom------
-//We choose a dynamic branch predictor here
-//two bits here: Starting with WNT
+//We use TAGE branch predictor
 
-struct dynamicMap {
-    uint32_t pcAdd;
-    uint32_t status;
-};
 
-struct  dynamicPos{
-    uint32_t pos;
-    uint8_t find; //1: find, 0: didn't find
-};
-
-struct dynamicMap dMap[MAXBRANCHNUM];
 
 //------------------------------------//
 //        Predictor Functions         //
@@ -258,6 +248,7 @@ init_predictor()
             GShareInit();
             break;
         case CUSTOM:
+            tage_init();
         default:
             break;
     }
@@ -290,7 +281,7 @@ make_prediction(uint32_t pc)
         //if(ans.find == 0) return NOTTAKEN;
         //else if(dMap[ans.pos].status <= 2) return NOTTAKEN;
         //else return TAKEN;
-        return TAKEN;
+        return tage_predict(pc);
     default:
         return TAKEN;
   }
@@ -319,10 +310,7 @@ train_predictor(uint32_t pc, uint8_t result)
             GShareUpdate(pc, result);
             break;
         case CUSTOM:
-            //neural_train(pc, outcome);
-            //tage_train(pc, outcome);
-            //wp_train(pc, outcome);
-            //perceptron_train(pc, outcome);
+            tage_train(pc, result);
             break;
         default:
             break;

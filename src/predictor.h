@@ -11,6 +11,8 @@
 
 #include <stdint.h>
 #include <stdlib.h>
+
+//#include <bitset.h>
 //#include <strmap.h>
 //
 // Student Information
@@ -24,6 +26,8 @@ extern const char *email;
 //------------------------------------//
 #define NOTTAKEN  0
 #define TAKEN     1
+
+#define TAGTABLE 4
 
 // The Different Predictor Types
 #define STATIC      0
@@ -70,5 +74,8 @@ uint8_t make_prediction(uint32_t pc);
 // indicates that the branch was not taken)
 //
 void train_predictor(uint32_t pc, uint8_t outcome);
+
+//custom
+
 
 #endif

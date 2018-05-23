@@ -88,6 +88,9 @@
 		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/README.txt">
 			<Option target="CSE240A"/>
 		</Unit>
+		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/TAGE.h">
+			<Option target="CSE240A"/>
+		</Unit>
 		<Unit filename="/Users/gechang/Documents/spring2018/cse 240A/CSE240A/Project/src/main.c">
 			<Option target="CSE240A"/>
 		</Unit>

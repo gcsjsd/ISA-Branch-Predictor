@@ -14,4 +14,4 @@ add_executable(CSE240A
         traces/mm_1.bz2
         traces/mm_2.bz2
         README.md
-        README.txt)
+        README.txt src/TAGE.h)
