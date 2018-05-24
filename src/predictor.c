@@ -64,28 +64,13 @@ uint8_t *predictorPre; //00->0 SL, 01->1: WL, 10->2: WG, 11->3: SG
 
 //------Custom------
 //We use TAGE branch predictor
-
+//the explanation and implementation detail is in TAGE.h
 
 
 //------------------------------------//
 //        Predictor Functions         //
 //------------------------------------//
 
-int calPow(int num){
-    int ans = 1;
-    for(int i = 0; i < num; i++){
-        ans = ans*2;
-    }
-    return ans;
-}
-
-void modifyPrediction(uint8_t *counter, uint8_t result){
-    if(result == TAKEN){
-        if(*counter != ST) (*counter)++;
-    }else{
-        if(*counter != SN) (*counter)--;
-    }
-}
 //------Static Functions------//
 //no initialization in Static
 
@@ -210,34 +195,23 @@ void tournamentUpdate(uint32_t pc, uint8_t result){
 }
 
 //------Custom------//
-/* struct dynamicPos findDynamicBranch(uint32_t pc){
-    struct dynamicPos ans;
-    ans.find = 0;
-    ans.pos = 0;
-    for(int i = 0; i < sizeof(dMap)/sizeof(struct dynamicMap); i++){
-        if(dMap[i].pcAdd == pc){
-            ans.find = 1;
-            ans.pos = i;
-            return ans;
-        }else if(dMap[i].pcAdd == -1){
-            ans.find = 0;
-            ans.pos = i;
-            return ans;
-        }else{}
+
+//funcion to update the predictor
+
+void modifyPrediction(uint8_t *counter, uint8_t result){
+    if(result == TAKEN){
+        if(*counter != ST) (*counter)++;
+    }else{
+        if(*counter != SN) (*counter)--;
     }
-    return ans;
 }
 
-*/
+
 // Initialize the predictor
-//
+
 void
 init_predictor()
 {
-  //
-  //TODO: Initialize Branch Predictor Data Structures
-  //
-  //no initialization for static predictor
     switch (bpType) {
         case STATIC:
             return;
@@ -262,14 +236,6 @@ init_predictor()
 uint8_t
 make_prediction(uint32_t pc)
 {
-  //
-  //TODO: Implement prediction scheme
-  //
-
-
-  // Make a prediction based on the bpType
-  //struct dynamicPos ans = findDynamicBranch(pc);
-
   switch (bpType) {
     case STATIC:
         return TAKEN;
@@ -285,7 +251,6 @@ make_prediction(uint32_t pc)
     default:
         return TAKEN;
   }
-
   // If there is not a compatable bpType then return NOTTAKEN
   return NOTTAKEN;
 }
@@ -297,9 +262,6 @@ make_prediction(uint32_t pc)
 void
 train_predictor(uint32_t pc, uint8_t result)
 {
-  //
-  //TODO: Implement Predictor training
-  //
     switch (bpType) {
         case STATIC:
             break;
@@ -315,23 +277,5 @@ train_predictor(uint32_t pc, uint8_t result)
         default:
             break;
     }
-
-    // If there is not a compatable bpType then return NOTTAKEN
     return;
-  //------Custom------//
-/*  struct dynamicPos ans = findDynamicBranch(pc);
-
-  if(ans.find == 0){
-    dMap[ans.pos].pcAdd = pc;
-    //dMap[ans.pos].status = 1;
-  }
-  else{
-    if(result == NOTTAKEN){
-      if(dMap[ans.pos].status != 0) dMap[ans.pos].status--;
-    }else{
-      if(dMap[ans.pos].status != 3) dMap[ans.pos].status++;
-    }
-  }
-    printf("Train finished \n");
-  return; */
 }
