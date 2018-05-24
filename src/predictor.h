@@ -12,8 +12,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-//#include <bitset.h>
-//#include <strmap.h>
 //
 // Student Information
 //
@@ -44,6 +42,22 @@ extern const char *bpName[];
 #define WN  1			// predict NT, weak not taken
 #define WT  2			// predict T, weak taken
 #define ST  3			// predict T, strong taken
+
+//------predictor parameters------//
+
+//bimodal table
+#define BIMODAL_LENGTH 2048
+#define BIMODAL_COUNTER_SIZE 3
+#define BIMODAL_INDEX(pc) (pc % BIMODAL_LENGTH)
+
+
+//TAGE table
+#define TABLE_NUM 8
+#define ENTRY_BIT 10
+#define LEN_TAG 12
+#define LEN_COUNTS 3
+#define MIN_LEN 5
+#define MAX_LEN 131
 
 //------------------------------------//
 //      Predictor Configuration       //
